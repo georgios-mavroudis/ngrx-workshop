@@ -1,0 +1,10 @@
+<input type="text" [formControl]="greetingForm">
+<button (click)="setGreeting()">send greeting</button>
+<ul>
+  <li *ngFor="let greeting of allGreetings"
+      [ngStyle]="{ 'margin': '10px' }">
+    greeting: <br />
+    time:
+    <button (click)="removeGreeting()">Remove</button>
+  </li>
+</ul>
