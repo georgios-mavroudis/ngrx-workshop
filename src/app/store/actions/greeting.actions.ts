@@ -6,6 +6,15 @@ export const sendGreeting = createAction(
   props<{ greeting: Greeting }>(),
 );
 
+export const sendGreetingCompleted = createAction(
+  '[Amb] sendGreetingCompleted',
+  props<{ greeting: Greeting }>(),
+);
+
+export const sendGreetingFailed = createAction(
+  '[Amb] sendGreetingFailed',
+);
+
 export const getGreeting = createAction(
   '[Amb] getGreeting',
 );

@@ -8,6 +8,8 @@ import { GreetingDataManager } from './data-managers/greeting.data-manager';
 import { ParentComponent } from './components/parent/parent.component';
 import { reducers } from './store/reducers';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { GreetingEffects } from './store/effects/greeting.effect';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     StoreModule.forRoot(reducers, {}),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([GreetingEffects]),
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     GreetingDataManager,

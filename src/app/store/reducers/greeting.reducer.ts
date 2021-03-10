@@ -20,7 +20,7 @@ const adapter = createEntityAdapter<Greeting>();
 const reducer = createReducer(
   initialState,
   on(
-    sendGreetingActions.sendGreeting,
+    sendGreetingActions.sendGreetingCompleted,
     (state, { greeting }) => adapter.addOne(greeting, state),
   ),
 );
