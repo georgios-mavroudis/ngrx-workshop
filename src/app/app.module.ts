@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { GreetingDataManager } from './data-managers/greeting.data-manager';
 import { ParentComponent } from './components/parent/parent.component';
+import { reducers } from './store/reducers';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -15,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers, {}),
     EffectsModule.forRoot([]),
     ReactiveFormsModule,
   ],
