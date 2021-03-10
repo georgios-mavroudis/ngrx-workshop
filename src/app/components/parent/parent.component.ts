@@ -19,6 +19,10 @@ export class ParentComponent implements OnInit{
   ) {}
 
   ngOnInit() {
+    this.greetingDataManager.getAllGreetings$()
+      .subscribe((greetings) => {
+        this.allGreetings = greetings;
+      });
   }
 
   removeGreeting(id: number) {
@@ -34,5 +38,6 @@ export class ParentComponent implements OnInit{
      word: this.greetingForm.value,
      time: Date.now(),
     };
+    this.greetingDataManager.sendGreeting(this.greeting);
   }
 }

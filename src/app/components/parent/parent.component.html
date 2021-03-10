@@ -3,8 +3,8 @@
 <ul>
   <li *ngFor="let greeting of allGreetings"
       [ngStyle]="{ 'margin': '10px' }">
-    greeting: <br />
-    time:
-    <button (click)="removeGreeting()">Remove</button>
+    greeting: {{ greeting.word }}<br />
+    time: {{ greeting.time | date: 'shortTime' }}
+    <button (click)="removeGreeting(greeting.id)">Remove</button>
   </li>
 </ul>
